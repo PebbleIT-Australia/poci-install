@@ -15,7 +15,7 @@ if [ "$USER" != "opc" ]; then
   exit 1
 fi
 cd ~
-if [ -d "~/poci" ]; then
+if [ -d "/home/opc/poci" ]; then
   /bin/bash ~/poci/install.sh "readme"
 else
   sudo timedatectl set-timezone Australia/Sydney
