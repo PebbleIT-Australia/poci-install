@@ -15,14 +15,11 @@ if [ "$USER" != "opc" ]; then
   exit 1
 fi
 cd ~
-readme=""
-if [ -d "opc" ]; then
-  readme="readme"
+if [ -d "~/poci" ]; then
+  /bin/bash ~/poci/install.sh "readme"
 else
-  readme=$1
   sudo timedatectl set-timezone Australia/Sydney
   sudo yum -y install git
   git clone https://github.com/PebbleIT-Australia/poci.git
+  /bin/bash ~/poci/install.sh
 fi
-
-/bin/bash ~/poci/install.sh $readme
