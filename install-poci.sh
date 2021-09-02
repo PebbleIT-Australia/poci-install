@@ -16,8 +16,10 @@ if [ "$USER" != "opc" ]; then
 fi
 cd ~
 if [ -d "/home/opc/poci" ]; then
+  printf "\nfound POCI directory\n\n" 
   /bin/bash ~/poci/install.sh "readme"
 else
+  printf "\nPOCI directory DOES NOT EXIST. Am going to install...\n\n" 
   sudo timedatectl set-timezone Australia/Sydney
   sudo yum -y install git
   git clone https://github.com/PebbleIT-Australia/poci.git
