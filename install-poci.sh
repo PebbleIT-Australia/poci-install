@@ -21,5 +21,7 @@ else
   sudo timedatectl set-timezone Australia/Sydney
   sudo yum -y install git
   git clone https://github.com/PebbleIT-Australia/poci.git
+  cd poci
+  git remote set-url --push origin no-pushing-allowed
   /bin/bash ~/poci/install.sh
 fi
