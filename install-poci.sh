@@ -19,7 +19,9 @@ if [ -d "/home/opc/poci" ]; then
   /bin/bash ~/poci/install.sh "readme"
 else
   sudo timedatectl set-timezone Australia/Sydney
-  sudo yum -y install oracle-release-el7 git
+  sudo yum install python3-devel
+  sudo yum update
+  # sudo yum -y install git  --> already installed on OL8
   git clone https://github.com/PebbleIT-Australia/poci.git
   cd poci
   git remote set-url --push origin no-pushing-allowed
